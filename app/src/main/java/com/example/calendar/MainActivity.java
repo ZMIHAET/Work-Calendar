@@ -2,6 +2,7 @@ package com.example.calendar;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.nfc.Tag;
 import android.os.Build;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -30,11 +32,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Locale locale = new Locale("ru");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_main);
 
         calendarView = findViewById(R.id.calendarView);
         textViewSelectedDate = findViewById(R.id.textView_selected_date);
         resultShow = findViewById(R.id.resultShow);
+
+
+
+        calendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
         HashMap<String, String> days = new HashMap<>();
 
