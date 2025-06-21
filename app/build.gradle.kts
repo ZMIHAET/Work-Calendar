@@ -28,9 +28,11 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.appcompat)
+    implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
