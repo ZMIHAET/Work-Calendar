@@ -31,8 +31,9 @@ android {
 
 dependencies {
 
-    implementation(libs.appcompat)
+    implementation("androidx.core:core:1.13.0")
     implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
+    implementation("com.prolificinteractive:material-calendarview:1.4.3")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
